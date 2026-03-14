@@ -1,37 +1,28 @@
-// Java Program to Illustrate books class
-// To Do all the Operations related to Books such as
-// add, check-in, check-out,Valid books,Update books
 
-// Importing required classes
 import java.util.Scanner;
 
-// CLass
+
 public class books {
 
-    // Class data members
+
     book theBooks[] = new book[50];
     public static int count;
 
     Scanner input = new Scanner(System.in);
 
-    // Method 1
-    //  To compare books
+  
     public int compareBookObjects(book b1, book b2)
     {
-
-        // If book name matches
         if (b1.bookName.equalsIgnoreCase(b2.bookName)) {
-
-            // Printing book exists
             System.out.println(
                 "Book of this Name Already Exists.");
             return 0;
         }
 
-        // if book serial matches
+     
         if (b1.sNo == b2.sNo) {
 
-            // Print book exists
+          
             System.out.println(
                 "Book of this Serial No Already Exists.");
 
@@ -40,8 +31,6 @@ public class books {
         return 1;
     }
 
-    // Method 2
-    // To add book
     public void addBook(book b)
     {
 
@@ -64,16 +53,15 @@ public class books {
         }
     }
 
-    // Method 3
-    // To search book by serial number
+
     public void searchBySno()
     {
 
-        // Display message
+
         System.out.println(
             "\t\t\t\tSEARCH BY SERIAL NUMBER\n");
 
-        // Class data members
+
         int sNo;
         System.out.println("Enter Serial No of Book:");
         sNo = input.nextInt();
@@ -99,12 +87,10 @@ public class books {
                                + sNo + " Found.");
     }
 
-    // Method 4
-    // To search author by name
     public void searchByAuthorName()
     {
 
-        // Display message
+  
         System.out.println(
             "\t\t\t\tSEARCH BY AUTHOR'S NAME");
 
@@ -120,11 +106,9 @@ public class books {
 
         for (int i = 0; i < count; i++) {
 
-            // if author matches any of its book
             if (authorName.equalsIgnoreCase(
                     theBooks[i].authorName)) {
 
-                // Print below corresponding credentials
                 System.out.println(
                     theBooks[i].sNo + "\t\t"
                     + theBooks[i].bookName + "\t\t"
@@ -135,14 +119,11 @@ public class books {
             }
         }
 
-        // Else no book matches for author
         if (flag == 0)
             System.out.println("No Books of " + authorName
                                + " Found.");
     }
 
-    // Method 5
-    // To display all books
     public void showAllBooks()
     {
 
@@ -161,8 +142,7 @@ public class books {
         }
     }
 
-    // Method 6
-    // To edit the book
+ 
     public void upgradeBookQty()
     {
 
@@ -176,7 +156,6 @@ public class books {
 
             if (sNo == theBooks[i].sNo) {
 
-                // Display message
                 System.out.println(
                     "Enter No of Books to be Added:");
 
@@ -189,12 +168,9 @@ public class books {
         }
     }
 
-    // Method 7
-    // To create menu
     public void dispMenu()
     {
 
-        // Displaying menu
         System.out.println(
             "----------------------------------------------------------------------------------------------------------");
         System.out.println("Press 1 to Add new Book.");
@@ -212,8 +188,6 @@ public class books {
             "-------------------------------------------------------------------------------------------------------");
     }
 
-    // Method 8
-    // To search the library
     public int isAvailable(int sNo)
     {
 
@@ -235,8 +209,7 @@ public class books {
         return -1;
     }
 
-    // Method 9
-    // To remove the book from the library
+
     public book checkOutBook()
     {
 
@@ -253,8 +226,6 @@ public class books {
         return null;
     }
 
-    // Method 10
-    // To add the Book to the Library
     public void checkInBook(book b)
     {
         for (int i = 0; i < count; i++) {
